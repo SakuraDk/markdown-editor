@@ -25,12 +25,10 @@
     "markdown-it-ins": "^3.0.0",
     "markdown-it-mark": "^3.0.0",
     "markdown-it-sanitizer": "^0.4.3",
-    "markdown-it-video": "^0.6.3",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
-    "react-scroll": "^1.7.16",
     "redux": "^4.0.5",
     "scriptjs": "^2.5.9"
   },
