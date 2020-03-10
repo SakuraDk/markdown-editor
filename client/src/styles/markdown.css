@@ -1,0 +1,160 @@
+.markdown {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, 'Helvetica Neue', sans-serif;
+}
+
+.markdown details{
+  border: 1px solid #3f51b5;
+  margin: 1em 0em;
+  border-radius: 4px;
+  padding: .5em .5em 0;
+}
+
+.markdown summary{
+  font-weight: bold;
+  margin: -.5em -.5em 0;
+  padding: .5em;
+  color: ghostwhite;
+  background-color: #3f51b5;
+}
+
+.markdown details[open] {
+  padding: .5em;
+  margin: 1em auto;
+}
+
+.markdown details[open] summary{
+  margin-bottom: .5em;
+}
+
+.markdown pre {
+  background-color: black;
+  padding: 10px;
+}
+
+.markdown code {
+  background-color: rgba(0, 0, 0, 0.25);
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  color: white;
+}
+
+.markdown mark {
+  background-color: #3f51b5;
+  color: ghostwhite;
+}
+
+.markdown table{
+  margin: 10px auto 10px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 90%;
+}
+
+.markdown table tr{
+  border-bottom: solid 1px #eee;
+}
+
+.markdown table tr:hover{
+  background-color: #d4f0fd;
+}
+
+.markdown table th{
+  padding: 10px;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.markdown table td{
+  padding: 10px;
+}
+
+
+.markdown .embed-responsive-16by9 {
+  position:relative;
+  padding-top:56.25%;
+  background-color: #303030;
+}
+
+.markdown .embed-responsive-item {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+.markdown .tweet-s {
+  display: flex;
+  height: 250px;
+  align-items: center;
+  width: 100%;
+}
+
+.markdown .tweet-m {
+  display: flex;
+  height: 500px;
+  align-items: center;
+  width: 100%;
+}
+
+.markdown .tweet-l {
+  display: flex;
+  height: 800px;
+  align-items: center;
+  width: 100%;
+}
+
+.markdown .tweet-editing{
+  background-color: #303030;
+  width: 70%;
+  height: 80%;
+  margin: auto;
+}
+
+.markdown .tweet .twitter-tweet-rendered {
+  margin: auto;
+}
+
+.markdown .timeline {
+  display: flex;
+  align-items: center;
+  height: 700px;
+  width: 100%;
+}
+
+.markdown .timeline .twitter-timeline {
+  margin: auto;
+}
+
+.markdown .box {
+  position: relative;            /* タイトル用に親要素定義  */
+  box-sizing: border-box;          /* 罫線・余白も含む大きさ  */
+  margin: 50px auto 0 auto;    /* BOXの位置               */
+  width: 90%;               /* BOXの最大横幅           */
+  padding: 25px 10px 25px 10px; /* BOX内の余白             */
+  border: 1px solid #3f51b5;   /* BOXの枠線               */
+}
+ 
+ /* --- タイトル部分の定義 ----------------------------------------*/
+.markdown .box::before {
+  position      : absolute;          /* 親からの相対位置の定義  */
+  display       : inline-block;      /* インラインボックス定義  */
+  box-sizing    : border-box;        /* 罫線・余白も含む大きさ  */
+  line-height   : 1;                 /* 1行の高さを初期化       */
+  min-width     : 100px;
+  color         : ghostwhite;
+  background    : #3f51b5;           /* タイトル背景色          */
+  content       : attr(title);       /* タイトルに[title]を表示 */
+  font-weight   : bold;              /* タイトルは太字          */
+  padding       : 7px 11px;          /* タイトル内の余白        */
+  top           : -31px;             /* 枠線分上を指定          */
+  left          : -1px;              /* 枠線分左を指定          */
+  font-size     : 17px;              /* タイトルの文字サイズ    */
+}
+
+.markdown a{
+  color: aqua;
+}
+
+.markdown a:visited{
+  color: lightblue;
+}

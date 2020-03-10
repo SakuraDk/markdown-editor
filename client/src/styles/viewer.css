@@ -1,0 +1,144 @@
+#viewer {
+  display: block;
+  margin: 0;
+  width: 100vw;
+}
+
+nav.drawer {
+  width: 80vw;
+}
+
+nav.drawer a{
+  text-decoration: none;
+  color: #fff;
+}
+
+#viewer header {
+  position: relative;
+  display: block;
+  margin: 0;
+  height: 50px;
+  width: 100%;
+  z-index: 10;
+}
+
+#viewer main {
+  position: fixed;
+  display: flex;
+  overflow: auto;
+  margin: 50px 0 0;
+  width: 100vw;
+  height: calc(100vh - 50px);
+}
+
+#viewer main .left {
+  margin: 0;
+  overflow: hidden;
+  flex-basis: 100%;
+}
+
+#viewer article {
+  margin: 10px auto 100px;
+  padding: 10px 2%;
+  width: 96%;
+  height: 100%;
+  max-width: 900px;
+  word-break: break-all;
+  overflow: auto;
+  background-color: #424242;
+}
+
+/* table-of-contents */
+#viewer nav.table-of-contents{
+  position: -webkit-sticky;
+  position: sticky;
+  overflow: scroll;
+  top: 100px;
+  height: 300px;
+  width: 300px;
+  margin: 0 10px 0 0;
+  background-color: #424242;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#viewer nav.table-of-contents::webkit-scrollbar {
+  display: none;
+}
+ 
+#viewer nav.table-of-contents ul {
+  padding-left: 20px;
+  list-style: none;
+}
+#viewer nav.table-of-contents ul li {
+  position: relative;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+#viewer nav.table-of-contents ul li a {
+  text-decoration: none;
+  color: #aaaaaa;
+}
+
+#viewer nav.table-of-contents ul li.active a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#viewer nav.table-of-contents ul li::before {/*縦線*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  content: '';
+  background-color: #424242;
+}
+
+#viewer nav.table-of-contents ul li.active::before {/*縦線*/
+  background-color: #666666;
+}
+
+
+
+
+
+/* table-of-documents */
+#viewer nav.table-of-documents{
+  margin: 0 10px 0 0;
+  background-color: #424242;
+}
+
+#viewer nav.table-of-documents ul {
+  padding-left: 20px;
+  list-style: none;
+}
+#viewer nav.table-of-documents ul li {
+  position: relative;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+#viewer nav.table-of-documents ul li a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#viewer nav.table-of-documents ul li::before {/*縦線*/
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  content: '';
+  background-color: #666666;
+}
+
+#viewer nav.table-of-documents ul li a:hover {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #aaaaaa;
+}
