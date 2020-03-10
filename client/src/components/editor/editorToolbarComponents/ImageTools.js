@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Compressor from 'compressorjs';
 import copy from 'copy-to-clipboard';
 
 import { Tooltip, IconButton, Popover, GridList, GridListTile } from '@material-ui/core';
@@ -66,26 +67,40 @@ export function UploadImage() {
 
   const handleUploadImage = async(e) => {
     if( !isUploading ) {
-      const formData = new FormData();
-      formData.append("file", e.target.files[0]);
-      const config = { headers: {"content-type": "multipart/form-data"} }
+      const file = e.target.files[0];
       
-      let url = null;
-      store.dispatch( uploadImageRequest() );
-      await axios.post('/api/images', formData, config )
-      .then( (res) => {
-        store.dispatch( uploadImageSuccess() )
-        store.dispatch( openUploadImageNotification() )
-        url = res.data
+      await store.dispatch( uploadImageRequest() );
+
+      await new Compressor( file, {
+        quality: 0.6,
+        maxWidth: 500,
+        maxHeight: 500,
+        success( result ) {
+          console.log(result)
+          const formData = new FormData();
+          formData.append("file", result, file.name);
+          const config = { headers: {"content-type": "multipart/form-data"} }
+
+          axios.post('/api/images', formData, config )
+          .then( (res) => {
+            console.log(formData)
+            store.dispatch( uploadImageSuccess() )
+            store.dispatch( openUploadImageNotification() )
+            const url = res.data
+            copy(`![${url.split('/').slice(-1)[0]}](${url})`)
+          })
+          .catch( (err) => {
+            store.dispatch( uploadImageFailed() )
+            store.dispatch( openUploadImageNotification() )
+            console.log(new Error(err))
+          })
+        },
+        error( err ) {
+          store.dispatch( uploadImageFailed() )
+          store.dispatch( openUploadImageNotification() )
+          console.log(new Error(err))
+        }
       })
-      .catch( (err) => {
-        store.dispatch( uploadImageFailed() )
-        store.dispatch( openUploadImageNotification() )
-        console.log(new Error(err))
-      })
-  
-      copy(`![${url.split('/').slice(-1)[0]}](${url})`)
-  
       setTimeout( () => { store.dispatch( closeUploadImageNotification() ) }, 2000)
     }
   }

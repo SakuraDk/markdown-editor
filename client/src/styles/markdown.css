@@ -67,6 +67,10 @@
   padding: 10px;
 }
 
+.markdown img {
+  max-width: 100%;
+}
+
 
 .markdown .embed-responsive-16by9 {
   position:relative;

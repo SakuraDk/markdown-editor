@@ -23,7 +23,6 @@ export default function EditorViewer () {
       }
     })
     .then( (res) => {
-      console.log(res.data)
       if( !res.data ) history.push('/')
       else store.dispatch( fetchDocumentSuccess( res.data ) )
     })
@@ -31,7 +30,7 @@ export default function EditorViewer () {
       store.dispatch( fetchDocumentFailed() )
       console.log( new Error(err) );
     })
-  }, [location])
+  }, [location.pathname])
   
 
   return (

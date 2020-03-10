@@ -18,7 +18,6 @@ const useMd = ( isEditing ) => {
   .use(require('markdown-it-anchor').default)
   .use(require('markdown-it-header-sections'))
   .use(require('markdown-it-imsize'), { autofill: true })
-  .use(require('markdown-it-video'))
   .use(require("@iktakahiro/markdown-it-katex"), {
     throwOnError: false,
     errorColor: " #cc0000",
