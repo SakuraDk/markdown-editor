@@ -9,9 +9,11 @@
 $ mongod --dbpath=[dbpath]
 ```
 
-2. 2つ目のシェルでAPIサーバを立ち上げる
+2. 2つ目のシェルでAPIサーバに必要なディレクトリを作成し、立ち上げる。
 ```shell
 $ cd server
+$ mkdir public
+$ mkdir public/images
 $ npm start
 ```
 
