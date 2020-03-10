@@ -1,7 +1,8 @@
+.DS_Store
+
 # data
 db/
 images/
-
 
 # Logs
 logs
