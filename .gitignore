@@ -1,4 +1,5 @@
 .DS_Store
+firebase.js
 
 # data
 db/
